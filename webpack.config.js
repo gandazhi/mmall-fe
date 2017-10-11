@@ -48,9 +48,18 @@ var config = {
             {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'},
         ]
     },
+    resolve: {
+        alias: {
+            util: __dirname + '/src/util',
+            page: __dirname + '/src/page',
+            service: __dirname + '/src/service',
+            image: __dirname + '/src/image',
+
+        }
+    }
 };
 
-if ('dev' === WEBPACK_ENV){
+if ('dev' === WEBPACK_ENV) {
     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
 }
 

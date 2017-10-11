@@ -1,1 +1,1 @@
-console.log('i am common');
+require('./layout.css');
