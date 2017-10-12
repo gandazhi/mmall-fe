@@ -25,7 +25,7 @@ var config = {
     output: {
         path: './dist',
         filename: 'js/[name].js',
-        publicPath: '/dist',
+        publicPath: '/dist/',
     },
     externals: {
         'jquery': 'window.jQuery'

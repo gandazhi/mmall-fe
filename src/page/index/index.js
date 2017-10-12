@@ -4,15 +4,10 @@ console.log('this is index');
 var _mm = require('util/mm');
 
 
-_mm.request({
-    url: '/product/get_list.do',
-    success: function (res) {
-        console.log(res);
-    },
-    error: function (err) {
-        console.log(err);
-    }
+var res = _mm.request({
+    url: 'http://www.mmall.com/product/get_list.do?orderBy=price-asc'
 });
+console.log(res);
 
 console.log(_mm.getUrlParam("test"));
 

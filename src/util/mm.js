@@ -7,16 +7,17 @@ var conf = {
 
 var _mm = {
     request: function (param) {
-        $.ajax({
+        var t = $.ajax({
             type: param.method || 'get',
             url: param.url || '',
             dataType: param.dataType || 'json',
             data: param.data || '',
             success: function (res) {
                 var _this = this;
-                if (res.status() === 0) { //请求成功
+                if (res.status === 0) { //请求成功
+                    window.a = res;
                     typeof res.success === 'function' && param.success(res.data, res.msg);
-                } else if (res.status() === 10) { //没有登录，需要强制登录
+                } else if (res.status === 10) { //没有登录，需要强制登录
                     _this.doLogin();
                 } else if (res.status === 1) { //请求接口错误
                     typeof res.error === 'function' && param.error(res.msg);
@@ -24,8 +25,10 @@ var _mm = {
             },
             error: function (err) {
                 typeof param.error === 'function' && param.error(err.statusText);
-            }
+            },
+            async: false,
         });
+        return window.a;
     },
 
     //统一登录处理
