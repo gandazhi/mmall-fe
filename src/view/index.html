@@ -5,10 +5,14 @@
     <title>gandazhi-mall</title>
 </head>
 <body>
-
 <%= require('html-loader!./layout/nav.html')%>
 <%= require('html-loader!./layout/header.html')%>
-
+<div class="page-wrap w">
+    <%= require('html-loader!./layout/nav-side.html')%>
+    <div class="content with-nav">
+        test
+    </div>
+</div>
 <div>
     <a class="link">test</a>
     <a class="link-text">text2</a>
