@@ -51,11 +51,11 @@ var page = {
             status: false,
             msg: ''
         };
-        if (!_mm.validate(formData.username, 'require')) {
+        if (!_mm.validate(formData.username, 'not null')) {
             result.msg = '用户名不能为空';
             return result;
         }
-        else if (!_mm.validate(formData.password, 'require')) {
+        else if (!_mm.validate(formData.password, 'not null')) {
             result.msg = '密码不能为空';
             return result;
         }

@@ -72,12 +72,15 @@ var _mm = {
     validate: function (value, type) {
         var value = $.trim(value);
         //字段非空判断
-        if (type === 'require') {
+        if (type === 'not null') {
             return !!value;//转化为布尔类型值
         } else if (type === 'phone') {
             return /^1\d{10}$/.test(value);
         } else if (type === 'email') {
             return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+        }else if (type === 'chinese'){
+            var reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
+            return reg.test(value);
         }
     },
     goHome: function () {

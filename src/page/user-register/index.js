@@ -25,6 +25,10 @@ var page = {
         //通过ajax掉接口，验证这些字段的合法性
         $('#username').blur(function () {
             var username = $.trim($('#username').val());
+            //如果username为空，则不触发验证username合法这个事件
+            if (!_mm.validate(username, 'not null')) {
+                return;
+            }
             _user.checkUsername(username, function (res) {
                 formError.hide();
             }, function (errMsg) {
@@ -33,6 +37,9 @@ var page = {
         });
         $('#email').blur(function () {
             var email = $('#email').val().trim();
+            if (!_mm.validate(email, 'not null')) {
+                return null;
+            }
             _user.checkEmail(email, function (res) {
                 formError.hide();
             }, function (errMsg) {
@@ -41,6 +48,9 @@ var page = {
         });
         $('#phone').blur(function () {
             var phone = $('#phone').val().trim();
+            if (!_mm.validate(phone, 'not null')) {
+                return;
+            }
             _user.checkPhone(phone, function (res) {
                 formError.hide();
             }, function (errMsg) {
@@ -83,28 +93,43 @@ var page = {
             status: false,
             msg: ''
         };
-        if (!_mm.validate(formData.username, 'require')) {
+        if (!_mm.validate(formData.username, 'not null')) {
             result.msg = '用户名不能为空';
             return result;
-        } else if (!_mm.validate(formData.password, 'require')) {
+        }
+        if (_mm.validate(formData.username, "chinese")){
+            result.msg = "用户名不合法";
+            return result;
+        }
+        if (!_mm.validate(formData.password, "not null")) {
             result.msg = '密码不能为空';
             return result;
-        } else if (formData.password.length < 6) {
+        }
+        if (formData.password.length < 6) {
             result.msg = '密码长度不能小于6位';
             return result;
-        } else if (formData.password != formData.passwordConfirm) {
+        }
+        if (formData.password != formData.passwordConfirm) {
             result.msg = '两次输入密码不一致';
             return result;
-        } else if (formData.email == null) {
+        }
+        if (!_mm.validate(formData.email, "not null")) {
             result.msg = '邮箱不能为空';
             return result
-        } else if (formData.phone == null) {
+        }
+        if (!_mm.validate(formData.phone, "not null")) {
             result.msg = '手机号不能为空';
             return result;
-        } else if (formData.question == null) {
+        }
+        if (!_mm.validate(formData.phone, 'phone')) {
+            result.msg = '手机号不合法';
+            return result;
+        }
+        if (!_mm.validate(formData.question, "not null")) {
             result.msg = '修改密码提示问题不能为空';
             return result;
-        } else if (formData.answer == null) {
+        }
+        if (!_mm.validate(formData.answer, "not null")) {
             result.msg = '修改密码提示问题答案不能为空';
             return result;
         }
