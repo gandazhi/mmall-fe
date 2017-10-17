@@ -79,7 +79,7 @@ var page = {
         if (validateResult.status) {
             //表单验证成功，调用注册接口
             _user.register(formData, function (res) {
-                window.location.href = _mm.getUrlParam('redirect') || './user-login.html';
+                window.location.href = _mm.getUrlParam('redirect') || './result.html?type=register';
             }, function (errMsg) {
                 formError.show(errMsg);
             });

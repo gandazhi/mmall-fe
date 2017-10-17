@@ -55,5 +55,32 @@ var _user = {
             error: reject
         });
     },
+    getForgetQuestion: function (username, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_get_question.do'),
+            data: username,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
+    checkForgetQuestion: function (questionInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/for_get_checkAnswer.do'),
+            data: questionInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
+    resetPasswordQuestion: function (passwordInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_reset_password.do'),
+            data: passwordInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
 };
 module.exports = _user;
