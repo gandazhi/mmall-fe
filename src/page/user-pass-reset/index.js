@@ -15,6 +15,7 @@ var formError = {
 var page = {
     init: function () {
         this.bindEvent();
+        $('#username').focus();
     },
     bindEvent: function () {
         var _this = this;
@@ -61,6 +62,7 @@ var page = {
             formError.hide();
             $('#username-step').hide();
             $('#question-step').show();
+            $('#answer').focus();
             window.question = res;
             $('#question').val(res);
         }, function (errMsg) {
@@ -85,6 +87,7 @@ var page = {
             window.token = res;
             $('#question-step').hide();
             $('#password-step').show();
+            $('#password').focus();
         },function (errMsg) {
             formError.show(errMsg);
         });
