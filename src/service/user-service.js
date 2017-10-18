@@ -82,5 +82,13 @@ var _user = {
             error: reject
         });
     },
+    getUserInfo: function (resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/get_information.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    }
 };
 module.exports = _user;
