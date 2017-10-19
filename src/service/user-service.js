@@ -88,7 +88,16 @@ var _user = {
             method: 'POST',
             success: resolve,
             error: reject
-        })
+        });
+    },
+    updateUserInfo: function (updateInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/update_information.do'),
+            data: updateInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
     }
 };
 module.exports = _user;
