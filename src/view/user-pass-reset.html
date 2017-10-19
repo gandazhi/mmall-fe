@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title%> - mall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav-simple.html')%>
+<div class="page-wrap">
+    <div class="w">
+        <div class="user-con">
+            <div class="user-title">找回密码</div>
+            <div class="user-box">
+                <div class="error-item">
+                    <i class="fa fa-minus-circle error-icon"></i>
+                    <p class="error-msg">Error</p>
+                </div>
+                <div class="step-con step-username" id="username-step">
+                    <p class="user-item-context">请输入你的用户名：</p>
+                    <div class="user-item">
+                        <label class="user-label" for="username">
+                            <i class="fa fa-user"></i>
+                        </label>
+                        <input class="user-content" id="username" placeholder="请输入用户名" autocomplete="off">
+                    </div>
+                    <a class="btn btn-submit" id="submit-username">下一步</a>
+                </div>
+
+                <div class="step-con step-question" id="question-step">
+                    <p class="user-item-context">请填写你的密码重置问题答案：</p>
+                    <div class="user-item">
+                        <label class="user-label" for="username">
+                            <i class="fa fa-user"></i>
+                        </label>
+                        <input class="answer-content" id="question" placeholder="密码提示问题" autocomplete="off" onfocus="this.blur();">
+                    </div>
+                    <div class="user-item">
+                        <label class="user-label" for="username">
+                            <i class="fa fa-user"></i>
+                        </label>
+                        <input class="answer-content" id="answer" placeholder="请输入密码重置问题答案" autocomplete="off">
+                    </div>
+                    <a class="btn btn-submit" id="submit-answer">下一步</a>
+                </div>
+
+                <div class="step-con step-password" id="password-step">
+                    <p class="user-item-context">请输入你的新密码</p>
+                    <div class="user-item">
+                        <label class="user-label" for="username">
+                            <i class="fa fa-user"></i>
+                        </label>
+                        <input class="reset-content" id="password" type="password" placeholder="请输入你的新密码" autocomplete="off">
+                    </div>
+                    <div class="user-item">
+                        <label class="user-label" for="username">
+                            <i class="fa fa-user"></i>
+                        </label>
+                        <input class="reset-content" id="password-confirm"  type="password" placeholder="请再次输入你的新密码" autocomplete="off">
+                    </div>
+                    <a class="btn btn-submit" id="submit-reset">重置密码</a>
+                </div>
+                <div class="link-item">
+                    <a class="link" href="./user-login.html">立即登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

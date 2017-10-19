@@ -1,0 +1,2 @@
+<span class="label">重置密码答案：</span>
+<input class="text"  id="answer" value="{{answer}}">

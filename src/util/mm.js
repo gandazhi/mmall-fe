@@ -7,33 +7,35 @@ var conf = {
 
 var _mm = {
     request: function (param) {
-        var t = $.ajax({
+        var _this = this;
+        $.ajax({
             type: param.method || 'get',
             url: param.url || '',
-            dataType: param.dataType || 'json',
+            dataType: param.type || 'json',
             data: param.data || '',
             success: function (res) {
-                var _this = this;
-                if (res.status === 0) { //请求成功
-                    window.a = res;
-                    typeof res.success === 'function' && param.success(res.data, res.msg);
-                } else if (res.status === 10) { //没有登录，需要强制登录
+                // 请求成功
+                if (0 === res.status) {
+                    typeof param.success === 'function' && param.success(res.data, res.msg);
+                }
+                // 没有登录状态，需要强制登录
+                else if (10 === res.status) {
                     _this.doLogin();
-                } else if (res.status === 1) { //请求接口错误
-                    typeof res.error === 'function' && param.error(res.msg);
+                }
+                // 请求数据错误
+                else if (1 === res.status) {
+                    typeof param.error === 'function' && param.error(res.msg);
                 }
             },
             error: function (err) {
                 typeof param.error === 'function' && param.error(err.statusText);
-            },
-            async: false,
+            }
         });
-        return window.a;
     },
 
     //统一登录处理
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURI(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURI(window.location.href);
     },
 
     //获取服务器地址
@@ -70,12 +72,15 @@ var _mm = {
     validate: function (value, type) {
         var value = $.trim(value);
         //字段非空判断
-        if (type === 'require'){
-            return !!value;
-        }else if (type === 'phone'){
+        if (type === 'not null') {
+            return !!value;//转化为布尔类型值
+        } else if (type === 'phone') {
             return /^1\d{10}$/.test(value);
-        }else if (type === 'email'){
+        } else if (type === 'email') {
             return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+        }else if (type === 'chinese'){
+            var reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
+            return reg.test(value);
         }
     },
     goHome: function () {
