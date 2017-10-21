@@ -53,7 +53,9 @@ var page = {
             $('#edit-btn').text('确定');
             $('#edit-btn').attr('id', 'confirm-btn');
         });
+        //编辑后点确定，确定修改
         $('.panel-body').on('click', '#confirm-btn', function () {
+
             var updateData = {
                 username: $('#username').val().trim(),
                 email: $('#email').val().trim(),
@@ -63,16 +65,18 @@ var page = {
             };
             console.log(updateData);
             var validateResult = _this.validate(updateData);
-            if (!validateResult.status){
+            if (!validateResult.status) {
                 formError.show(validateResult.msg);
+            } else {
+                _user.updateUserInfo(updateData, function (res) {
+                    formError.hide();
+                    var newUserCenterHtml = '';
+                    newUserCenterHtml = _mm.renderHtml(templateIndex, res);
+                    $('.panel-body').html(newUserCenterHtml);
+                }, function (errMsg) {
+                    formError.show(errMsg);
+                });
             }
-
-            _user.updateUserInfo(updateData,function (res) {
-                formError.hide();
-                alert('修改成功');
-            },function (errMsg) {
-                formError.show(errMsg);
-            })
         });
     },
     validate: function (data) {
@@ -80,7 +84,7 @@ var page = {
             status: false,
             msg: ""
         };
-        if (_mm.validate(data.username, 'not null')) {
+        if (!_mm.validate(data.username, 'not null')) {
             result.msg = 'username不能为空';
             return result;
         }
