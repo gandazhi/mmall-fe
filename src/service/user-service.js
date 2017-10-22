@@ -98,6 +98,23 @@ var _user = {
             success: resolve,
             error: reject
         });
+    },
+    updatePassword: function (updateData, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/reset_password.do'),
+            data: updateData,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    logout: function (resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/logout.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
     }
 };
 module.exports = _user;

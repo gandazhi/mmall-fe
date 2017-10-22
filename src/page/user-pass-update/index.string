@@ -1,0 +1,16 @@
+<div class="user-info" >
+    <div class="form-line">
+        <span class="label">旧密码：</span>
+        <input class="text" id="oldPassword" placeholder="请输入旧密码" type="password">
+    </div>
+    <div class="form-line">
+        <span class="label">新密码：</span>
+        <input class="text" id="newPassword" placeholder="请输入新密码" type="password">
+    </div>
+    <div class="form-line">
+        <span class="label">确认新密码：</span>
+        <input class="text" id="confirmPassword" placeholder="请再次确认新密码" type="password">
+    </div>
+    <div class="user-update"></div>
+    <a class="btn btn-mini center-btn" id = "submit-btn">确定</a>
+</div>
