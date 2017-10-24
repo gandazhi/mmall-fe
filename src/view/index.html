@@ -2,31 +2,202 @@
 <html lang="en">
 <head>
     <%= require('html-loader!./layout/head-common.html') %>
-    <title>gandazhi-mall</title>
+    <title><%= htmlWebpackPlugin.options.title%> - mall</title>
 </head>
 <body>
 <%= require('html-loader!./layout/nav.html')%>
 <%= require('html-loader!./layout/header.html')%>
-<div class="page-wrap w">
-    <%= require('html-loader!./layout/nav-side.html')%>
-    <div class="content with-nav">
-        test
+<div class="w">
+    <ul class="keywords-list">
+        <li class="keywords-item">
+            <a class="link" href="">女装</a>
+            <a class="link" href="">内衣</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">手机</a>
+            <a class="link" href="">数码</a>
+            <a class="link" href="">电脑办公</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">男装</a>
+            <a class="link" href="">户外运动</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">手机</a>
+            <a class="link" href="">数码</a>
+            <a class="link" href="">电脑办公</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">女鞋</a>
+            <a class="link" href="">男鞋</a>
+            <a class="link" href="">箱包</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">美妆</a>
+            <a class="link" href="">个人护理</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">腕表</a>
+            <a class="link" href="">眼镜</a>
+            <a class="link" href="">珠宝饰品</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">母婴</a>
+            <a class="link" href="">玩具</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">零食</a>
+            <a class="link" href="">茶酒</a>
+            <a class="link" href="">进口食品</a>
+        </li>
+        <li class="keywords-item">
+            <a class="link" href="">生鲜水果</a>
+        </li>
+    </ul>
+    <div class="banner-con">
+        <div class="loading"></div>
     </div>
 </div>
-<div>
-    <a class="link">test</a>
-    <a class="link-text">text2</a>
+
+<div class="w">
+    <div class="floor-warp">
+        <div class="floor-item">
+            <i class="color-mark"></i>
+            <div class="floor-title">
+                美丽人生
+                <div class="floor-sub-name">FASHION &amp; BEAUTY</div>
+            </div>
+            <div class="floor-body">
+                <div class="hot-word-con">
+                    <a class="hot-word" href="">连衣裙</a>
+                    <a class="hot-word" href="">T恤男</a>
+                    <a class="hot-word" href="">美容护肤</a>
+                    <a class="hot-word" href="">休闲男鞋</a>
+                    <a class="hot-word" href="">黄金项链</a>
+                    <a class="hot-word" href="">单鞋</a>
+                    <a class="hot-word" href="">女包</a>
+                    <a class="hot-word" href="">文胸</a>
+                    <a class="hot-word" href="">大牌腕表</a>
+                </div>
+                <div class="middle-column-con">
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor1.jpg')%>">
+                            <div class="floor-item-title">VANS范斯 男鞋 2017新款 男子低帮运动休闲鞋板鞋VN000SJV63M</div>
+                            <div class="floor-price">￥399</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor1.jpg')%>">
+                            <div class="floor-item-title">VANS范斯 男鞋 2017新款 男子低帮运动休闲鞋板鞋VN000SJV63M</div>
+                            <div class="floor-price">￥399</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor1.jpg')%>">
+                            <div class="floor-item-title">VANS范斯 男鞋 2017新款 男子低帮运动休闲鞋板鞋VN000SJV63M</div>
+                            <div class="floor-price">￥399</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor1.jpg')%>">
+                            <div class="floor-item-title">VANS范斯 男鞋 2017新款 男子低帮运动休闲鞋板鞋VN000SJV63M</div>
+                            <div class="floor-price">￥399</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor1.jpg')%>">
+                            <div class="floor-item-title">VANS范斯 男鞋 2017新款 男子低帮运动休闲鞋板鞋VN000SJV63M</div>
+                            <div class="floor-price">￥399</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="floor-item">
+            <i class="color-mark"></i>
+            <div class="floor-title">
+                潮电酷玩
+                <div class="floor-sub-name">ELECTRONICS</div>
+            </div>
+            <div class="floor-body">
+                <div class="hot-word-con">
+                    <a class="hot-word" href="">手机</a>
+                    <a class="hot-word" href="">iPhone</a>
+                    <a class="hot-word" href="">相机</a>
+                    <a class="hot-word" href="">数码配件</a>
+                    <a class="hot-word" href="">影音电玩</a>
+                    <a class="hot-word" href="">生活电器</a>
+                    <a class="hot-word" href="">个人护理</a>
+                    <a class="hot-word" href="">电脑硬件</a>
+                    <a class="hot-word" href="">笔记本</a>
+                </div>
+                <div class="middle-column-con">
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor2.jpg')%>">
+                            <div class="floor-item-title">Beats Studio3 Wireless 头戴式耳机</div>
+                            <div class="floor-price">￥2888</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor2.jpg')%>">
+                            <div class="floor-item-title">Beats Studio3 Wireless 头戴式耳机</div>
+                            <div class="floor-price">￥2888</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor2.jpg')%>">
+                            <div class="floor-item-title">Beats Studio3 Wireless 头戴式耳机</div>
+                            <div class="floor-price">￥2888</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor2.jpg')%>">
+                            <div class="floor-item-title">Beats Studio3 Wireless 头戴式耳机</div>
+                            <div class="floor-price">￥2888</div>
+                        </div>
+                    </a>
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="<%= require('../image/floor/floor2.jpg')%>">
+                            <div class="floor-item-title">Beats Studio3 Wireless 头戴式耳机</div>
+                            <div class="floor-price">￥2888</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a class="btn">btn-test</a>
-    <a class="btn btn-mini">btn-mini-test</a>
-</div>
-<div>
-    <div class="loading"></div>
-</div>
-<div>
-    <i class="fa fa-user"></i>
-</div>
+
 <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>
