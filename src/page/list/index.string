@@ -1,0 +1,16 @@
+<div class="middle-column-con">
+                {{#list}}
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="{{imageHost}}{{mainImage}}" ">
+                            <div class="floor-item-title">{{subTitle}}</div>
+                            <div class="floor-price">￥{{price}}</div>
+                        </div>
+                    </a>
+                 {{/list}}
+                 {{^list}}
+                     <p class="err-tip">很抱歉，实在找不到您要的商品。</p>
+                 {{/list}}
+                </div>
