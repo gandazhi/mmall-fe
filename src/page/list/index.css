@@ -1,0 +1,81 @@
+.sort-con {
+    margin-left: 30px;
+    overflow: auto;
+}
+
+.sort-con .sort-item {
+    float: left;
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.sort-con .sort-item.active {
+    background: #c60023;
+    border: 1px solid #c60023;
+    color: #fff;
+}
+
+.sort-con .sort-item .fa-sort-desc {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.sort-con .sort-item.asc .fa-sort-desc {
+    opacity: .6;
+}
+
+.sort-con .sort-item.desc .fa-sort-asc {
+    opacity: .6;
+}
+
+.middle-column-con {
+    float: left;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.middle-column-con .grid {
+    text-decoration: none;
+    float: left;
+    display: block;
+    border-bottom: 15px solid #f5f5f5;
+    position: relative;
+    background-color: #fff;
+    margin-left: 28px;
+}
+
+.middle-column-con .floor-item-img {
+    width: 185px;
+    height: 185px;
+}
+
+.middle-column-con .floor-item-title {
+    width: 135px;
+    height: 40px;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    overflow: hidden;
+    margin: 8px auto;
+}
+
+.middle-column-con .floor-price {
+    font-size: 18px;
+    color: #FF0036;
+    line-height: 18px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.middle-column-con .floor-item-content-wrap:hover {
+    border: 1px solid #ff0742;
+}

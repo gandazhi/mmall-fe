@@ -1,0 +1,15 @@
+<div class="banner">
+    <ul>
+        <li>
+            <a href="" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner1.jpg">
+            </a>
+         </li>
+        <li>
+             <a href="" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner2.jpg">
+             </a>
+         </li>
+        <li>This is a final slide.</li>
+    </ul>
+</div>

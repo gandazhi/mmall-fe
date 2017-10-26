@@ -1,0 +1,36 @@
+<div class="floor-item">
+            <i class="color-mark"></i>
+            <div class="floor-title">
+                美丽人生
+                <div class="floor-sub-name">FASHION &amp; BEAUTY</div>
+            </div>
+            <div class="floor-body">
+                <div class="hot-word-con">
+                    <a class="hot-word" href="">连衣裙</a>
+                    <a class="hot-word" href="">T恤男</a>
+                    <a class="hot-word" href="">美容护肤</a>
+                    <a class="hot-word" href="">休闲男鞋</a>
+                    <a class="hot-word" href="">黄金项链</a>
+                    <a class="hot-word" href="">单鞋</a>
+                    <a class="hot-word" href="">女包</a>
+                    <a class="hot-word" href="">文胸</a>
+                    <a class="hot-word" href="">大牌腕表</a>
+                </div>
+                <div class="middle-column-con">
+                {{#data}}
+                    <a class="grid one-grid-price" href="./list.html?categoryId=">
+                        <div class="floor-item-content-wrap">
+                            <div class="floor-item-tag color-type-pink" style="visibility:hidden"></div>
+                            <img class="floor-item-img"
+                                 src="{{imageHost}}{{mainImage}}">
+                            <div class="floor-item-title">{{subTitle}}</div>
+                            <div class="floor-price">￥{{price}}</div>
+                        </div>
+                    </a>
+                {{/data}}
+                {{^data}}
+                    <p class="err-tip">一定是哪儿出问题了.....</p>
+                {{/data}}
+                </div>
+            </div>
+        </div>
