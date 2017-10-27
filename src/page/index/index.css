@@ -143,6 +143,8 @@
 .floor-warp .floor-body .middle-column-con {
     float: left;
     overflow: hidden;
+    width: 1080px;
+
 }
 
 .floor-warp .floor-body .middle-column-con .grid {
