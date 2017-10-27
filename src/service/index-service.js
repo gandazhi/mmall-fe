@@ -6,7 +6,7 @@ var _index = {
             data: listParam,
             url: _mm.getServerUrl('/index/getProductRecommend.do'),
             success: resolve,
-            error: reject
+            error: reject,
         });
     },
 };
